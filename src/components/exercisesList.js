@@ -7,7 +7,7 @@ export default function ExerciseList() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/exercises")
+      .get("https://exercise-backend.glitch.me/exercises")
       .then((exerData) => {
         setAllExercises(exerData.data);
       })
@@ -16,7 +16,7 @@ export default function ExerciseList() {
 
   const deleteExercise = (id) => {
     axios
-      .delete("http://localhost:3000/exercises/" + id)
+      .delete("https://exercise-backend.glitch.me/exercises/" + id)
       .then((e) => console.log(id + "deleted"))
       .catch((err) => console.log(err));
 

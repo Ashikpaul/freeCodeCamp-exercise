@@ -8,7 +8,7 @@ export default function CreateExercise() {
   const [users, setUsers] = useState(() => ["test user"]);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/users").then((usersData) => {
+    axios.get("https://exercise-backend.glitch.me/users").then((usersData) => {
       let allusers = usersData.data.map((e) => e.username);
       setUsers(allusers);
       setUserName(allusers[0]);
@@ -37,7 +37,7 @@ export default function CreateExercise() {
     };
 
     axios
-      .post("http://localhost:3000/exercises/add", newLog)
+      .post("https://exercise-backend.glitch.me/exercises/add", newLog)
       .then((e) => console.log("new log added"))
       .catch((err) => console.log(err));
 

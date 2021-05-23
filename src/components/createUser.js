@@ -22,7 +22,7 @@ export default function CreateUser() {
     };
 
     axios
-      .post("http://localhost:3000/users/add", newUser)
+      .post("https://exercise-backend.glitch.me/users/add", newUser)
       .then((res) => {
         console.log(res.data);
       })

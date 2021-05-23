@@ -9,13 +9,15 @@ export default function EditExercise(props) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/exercises/" + props.match.params.id)
+      .get(
+        "https://exercise-backend.glitch.me/exercises/" + props.match.params.id
+      )
       .then((exerLogs) => {
         setUserName(exerLogs.data.username);
         setDuration(exerLogs.data.duration);
         setDescription(exerLogs.data.description);
       });
-    axios.get("http://localhost:3000/users").then((usersData) => {
+    axios.get("https://exercise-backend.glitch.me/users").then((usersData) => {
       let allusers = usersData.data.map((e) => e.username);
       setUsers(allusers);
     });
@@ -44,7 +46,7 @@ export default function EditExercise(props) {
 
     axios
       .post(
-        "http://localhost:3000/exercises/update/" + props.match.params.id,
+        "https://exercise-backend.glitch.me/update/" + props.match.params.id,
         newLog
       )
       .then((e) => console.log("new log updated"))
