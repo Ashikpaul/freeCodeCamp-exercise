@@ -46,7 +46,8 @@ export default function EditExercise(props) {
 
     axios
       .post(
-        "https://exercise-backend.glitch.me/update/" + props.match.params.id,
+        "https://exercise-backend.glitch.me/exercises/update/" +
+          props.match.params.id,
         newLog
       )
       .then((e) => console.log("new log updated"))
