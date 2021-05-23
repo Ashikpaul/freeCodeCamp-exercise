@@ -10,7 +10,6 @@ export default function ExerciseList() {
       .get("http://localhost:3000/exercises")
       .then((exerData) => {
         setAllExercises(exerData.data);
-        console.log(exerData.data);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -30,7 +29,7 @@ export default function ExerciseList() {
   return (
     <div>
       <h1>Logged Exercises</h1>
-      <table className="table">
+      <table className="table table-striped">
         <thead className="thead-dark">
           <tr>
             <th>Username</th>

@@ -1,5 +1,4 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./styles.css";
 import Navbar from "./components/navbar";
@@ -11,7 +10,7 @@ import CreateUSer from "./components/createUser";
 export default function App() {
   return (
     <Router>
-      <div className="container">
+      <div className={"container App"}>
         <Navbar />
         <br />
         <Route path="/" exact component={ExercisesList} />
